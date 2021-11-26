@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Dept">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="deptVO" type="egovframework.example.sample.service.DeptVO"/>
+
+	<insert id="deptDAO.insertDept">
+		<![CDATA[
+			INSERT INTO DEPT 
+				( deptno
+				  , dname
+				  , loc )
+			VALUES ( #deptno#
+				  , #dname#
+				  , #loc# )
+		]]>
+	</insert>
+
+</sqlMap>
