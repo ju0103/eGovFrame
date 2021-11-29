@@ -18,11 +18,13 @@
 		]]>
 	</insert>
 
+	<!-- 부서 목록을 조회한다.  -->
 	<select id="deptDAO.selectDeptList" parameterClass="deptVO" resultClass="egovMap">
 			SELECT deptno
 				  , dname
 				  , loc
-			  FROM DEPT		
+			  FROM DEPT
+			 ORDER BY deptno
 	</select>
 	
 </sqlMap>
