@@ -1,5 +1,7 @@
 package egovframework.example.sample.service;
 
+import java.util.List;
+
 public interface EmpService {
 	
 	/**
@@ -9,4 +11,12 @@ public interface EmpService {
 	 * @throws Exception
 	 */
 	String insertEmp(EmpVO vo) throws Exception;
+	
+	/**
+	 * 사원 목록을 조회한다.
+	 * @param empVO - 조회할 사원 정보가 담긴 EmpVO
+	 * @return 사원 목록
+	 * @throws Exception
+	 */
+	List<?> selectEmpList(EmpVO empVO) throws Exception;
 }

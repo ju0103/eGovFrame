@@ -1,8 +1,11 @@
 package egovframework.example.sample.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import egovframework.example.sample.service.EmpVO;
+import egovframework.example.sample.service.SampleDefaultVO;
 import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 
 @Repository("empDAO")
@@ -17,4 +20,15 @@ public class EmpDAO extends EgovAbstractDAO {
 	public String insertEmp(EmpVO vo) throws Exception {
 		return (String) insert("empDAO.insertEmp", vo);
 	}
+	
+	/**
+	 * 사원 목록을 조회한다.
+	 * @param empVO - 조회할 사원 정보가 담긴 EmpVO
+	 * @return 사원 목록
+	 * @throws Exception
+	 */
+	public List<?> selectEmpList(EmpVO empVO) throws Exception {
+		return list("empDAO.selectEmpList", empVO);
+	}
+	
 }

@@ -18,5 +18,18 @@
 				  , #deptno# )
 		]]>
 	</insert>
+	
+	<!-- 사원 목록 -->
+	<select id="empDAO.selectEmpList" parameterClass="empVO" resultClass="egovMap">
+			SELECT empno
+				 , ename
+				 , job
+				 , mgr
+				 , hiredate
+				 , sal
+				 , comm
+				 , deptno
+			FROM EMP
+	</select>
 
 </sqlMap>
