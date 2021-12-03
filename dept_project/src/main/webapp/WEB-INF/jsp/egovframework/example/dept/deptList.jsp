@@ -30,7 +30,7 @@
 		<c:forEach items="${deptList}" var="result">
 			<tr>
 				<td>${result.deptno}</td>
-				<td>${result.dname}</td>
+				<td><a href="deptDetail.do?deptno=${result.deptno}">${result.dname}</a></td>
 				<td>${result.loc}</td>
 			</tr>
 		</c:forEach>

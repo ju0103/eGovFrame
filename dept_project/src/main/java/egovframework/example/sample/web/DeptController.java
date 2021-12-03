@@ -5,14 +5,13 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import egovframework.example.sample.service.DeptService;
 import egovframework.example.sample.service.DeptVO;
-import egovframework.example.sample.service.SampleDefaultVO;
-import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
 @Controller
 public class DeptController {
@@ -56,5 +55,21 @@ public class DeptController {
 		model.addAttribute("deptList", deptList);
 
 		return "dept/deptList";
+	}
+	
+	/**
+	 * 부서 상세 내역을 조회한다.
+	 * @param deptno
+	 * @param model
+	 * @return "deptDetail"
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/deptDetail.do")
+	public String selectDeptDetail(int deptno, Model model) throws Exception {
+		
+		DeptVO deptVO = deptService.selectDeptDetail(deptno);
+		model.addAttribute("deptDetail", deptVO);
+		
+		return "dept/deptDetail";
 	}
 }

@@ -28,7 +28,7 @@ public class DeptServiceImpl implements DeptService {
 	}
 
 	/**
-	 * 글 목록을 조회한다.
+	 * 부서 목록을 조회한다.
 	 * @param deptVO - 조회할 부서 정보가 담긴 VO
 	 * @return 부서 목록
 	 * @exception Exception
@@ -36,6 +36,17 @@ public class DeptServiceImpl implements DeptService {
 	@Override
 	public List<?> selectDeptList(DeptVO deptVO) throws Exception {
 		return deptDAO.selectDeptList(deptVO);
+	}
+
+	/**
+	 * 부서 상세 내역을 조회한다.
+	 * @param deptno
+	 * @return 부서 상세 내역
+	 * @exception Exception
+	 */
+	@Override
+	public DeptVO selectDeptDetail(int deptno) throws Exception {
+		return deptDAO.selectDeptDetail(deptno);
 	}
 	
 }

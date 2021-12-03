@@ -26,5 +26,16 @@
 			  FROM DEPT
 			 ORDER BY deptno
 	</select>
-	
+
+	<!-- 부서 상세 내역을 조회한다. -->
+	<select id="deptDAO.selectDeptDetail" resultClass="deptVO">
+		<![CDATA[
+			SELECT deptno
+				  , dname
+				  , loc
+			  FROM DEPT
+			 WHERE deptno = #deptno#
+			 ORDER BY deptno
+		]]>
+	</select>
 </sqlMap>

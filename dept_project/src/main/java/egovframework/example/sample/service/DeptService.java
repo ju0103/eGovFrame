@@ -20,4 +20,11 @@ public interface DeptService {
 	 */
 	List<?> selectDeptList(DeptVO deptVO) throws Exception;
 
+	/**
+	 * 부서 상세 내역을 조회한다.
+	 * @param deptno
+	 * @return 부서 상세 내역
+	 * @throws Exception
+	 */
+	DeptVO selectDeptDetail(int deptno) throws Exception;
 }
