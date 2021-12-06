@@ -47,5 +47,13 @@
 			WHERE empno = #empno#
 		]]>
 	</select>
+	
+	<!-- 사원 삭제 -->
+	<delete id="empDAO.deleteEmp">
+		<![CDATA[
+			DELETE FROM EMP
+			WHERE empno = #empno#
+		]]>
+	</delete>
 
 </sqlMap>

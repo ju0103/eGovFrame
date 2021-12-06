@@ -39,4 +39,14 @@ public class EmpDAO extends EgovAbstractDAO {
 	public EmpVO selectEmpDetail(int empno) throws Exception {
 		return (EmpVO) select("empDAO.selectEmpDetail", empno);
 	}
+	
+	/**
+	 * 사원을 삭제한다.
+	 * @param empno - 삭제할 사원의 사원번호
+	 * @return int형
+	 * @throws Exception
+	 */
+	public int deleteEmp(int empno) throws Exception {
+		return delete("empDAO.deleteEmp", empno);
+	}
 }

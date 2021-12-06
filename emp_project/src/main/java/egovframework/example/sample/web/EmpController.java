@@ -71,4 +71,19 @@ public class EmpController {
 		
 		return "emp/empDetail";
 	}
+	
+	/**
+	 * 사원을 삭제한다.
+	 * @param empno - 삭제할 사원의 사원번호
+	 * @return int형
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/deleteEmp.do")
+	public String deleteEmp(int empno) throws Exception {
+		
+		int result = empService.deleteEmp(empno);
+		System.out.println(">> delete result >> " + result);
+		
+		return "";
+	}
 }

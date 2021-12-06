@@ -53,7 +53,7 @@
 		<tr>
 			<td colspan="2" align="center">
 				<button type="button">수정</button>
-				<button type="button">삭제</button>
+				<button type="button" onclick="location='deleteEmp.do?empno=${empVO.empno}'">삭제</button>
 			</td>
 		</tr>
 	</table>

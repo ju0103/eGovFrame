@@ -48,5 +48,16 @@ public class EmpServiceImpl implements EmpService {
 	public EmpVO selectEmpDetail(int empno) throws Exception {
 		return empDAO.selectEmpDetail(empno);
 	}
+
+	/**
+	 * 사원을 삭제한다.
+	 * @param empno - 삭제할 사원의 사원번호
+	 * @return int형
+	 * @exception Exception
+	 */
+	@Override
+	public int deleteEmp(int empno) throws Exception {
+		return empDAO.deleteEmp(empno);
+	}
 	
 }
