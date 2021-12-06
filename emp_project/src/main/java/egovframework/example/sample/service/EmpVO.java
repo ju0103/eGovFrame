@@ -1,5 +1,7 @@
 package egovframework.example.sample.service;
 
+import java.sql.Timestamp;
+
 public class EmpVO {
 	
 	/** 사원번호 */
@@ -7,6 +9,21 @@ public class EmpVO {
 	
 	/** 사원이름 */
 	private String ename;
+	
+	/** 직업 */
+	private String job;
+	
+	/** 매니저 */
+	private int mgr;
+	
+	/** 입사일자  */
+	private Timestamp hiredate;
+	
+	/** 급여 */
+	private int sal;
+	
+	/** 커미션 */
+	private int comm;
 	
 	/** 부서번호 */
 	private int deptno;
@@ -22,6 +39,36 @@ public class EmpVO {
 	}
 	public void setEname(String ename) {
 		this.ename = ename;
+	}
+	public String getJob() {
+		return job;
+	}
+	public void setJob(String job) {
+		this.job = job;
+	}
+	public int getMgr() {
+		return mgr;
+	}
+	public void setMgr(int mgr) {
+		this.mgr = mgr;
+	}
+	public Timestamp getHiredate() {
+		return hiredate;
+	}
+	public void setHiredate(Timestamp hiredate) {
+		this.hiredate = hiredate;
+	}
+	public int getSal() {
+		return sal;
+	}
+	public void setSal(int sal) {
+		this.sal = sal;
+	}
+	public int getComm() {
+		return comm;
+	}
+	public void setComm(int comm) {
+		this.comm = comm;
 	}
 	public int getDeptno() {
 		return deptno;

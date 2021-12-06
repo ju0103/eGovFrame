@@ -19,4 +19,12 @@ public interface EmpService {
 	 * @throws Exception
 	 */
 	List<?> selectEmpList(EmpVO empVO) throws Exception;
+	
+	/**
+	 * 사원 상세 정보를 조회한다.
+	 * @param empno - 조회할 사원의 사원번호
+	 * @return 조회한 사원의 상세 정보
+	 * @exception Exception
+	 */
+	EmpVO selectEmpDetail(int empno) throws Exception;
 }

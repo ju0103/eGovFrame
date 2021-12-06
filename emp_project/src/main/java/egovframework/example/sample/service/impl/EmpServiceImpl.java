@@ -37,5 +37,16 @@ public class EmpServiceImpl implements EmpService {
 	public List<?> selectEmpList(EmpVO empVO) throws Exception {
 		return empDAO.selectEmpList(empVO);
 	}
+
+	/**
+	 * 사원 상세 정보를 조회한다.
+	 * @param empno - 조회할 사원의 사원번호
+	 * @return 조회한 사원의 상세 정보
+	 * @exception Exception
+	 */
+	@Override
+	public EmpVO selectEmpDetail(int empno) throws Exception {
+		return empDAO.selectEmpDetail(empno);
+	}
 	
 }

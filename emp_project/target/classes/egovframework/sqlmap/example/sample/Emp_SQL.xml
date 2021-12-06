@@ -31,5 +31,21 @@
 				 , deptno
 			FROM EMP
 	</select>
+	
+	<!-- 사원 상세 정보 -->
+	<select id="empDAO.selectEmpDetail" resultClass="empVO">
+		<![CDATA[
+			SELECT empno
+				 , ename
+				 , NVL(job, '') "JOB"
+				 , NVL(mgr, 0) "MGR"
+				 , hiredate
+				 , NVL(sal, 0) "SAL"
+				 , NVL(comm, 0) "COMM"
+				 , deptno
+			FROM EMP
+			WHERE empno = #empno#
+		]]>
+	</select>
 
 </sqlMap>
