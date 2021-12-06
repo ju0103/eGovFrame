@@ -48,5 +48,16 @@ public class DeptServiceImpl implements DeptService {
 	public DeptVO selectDeptDetail(int deptno) throws Exception {
 		return deptDAO.selectDeptDetail(deptno);
 	}
+
+	/**
+	 * 부서를 삭제한다.
+	 * @param deptno - 삭제할 부서번호
+	 * @return int형
+	 * @exception Exception
+	 */
+	@Override
+	public int deleteDept(int deptno) throws Exception {
+		return deptDAO.deleteDept(deptno);
+	}
 	
 }

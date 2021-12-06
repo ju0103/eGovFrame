@@ -72,4 +72,19 @@ public class DeptController {
 		
 		return "dept/deptDetail";
 	}
+	
+	/**
+	 * 부서를 삭제한다.
+	 * @param deptno - 삭제할 부서번호
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/deleteDept.do")
+	public String deleteDept(int deptno) throws Exception {
+		
+		int result = deptService.deleteDept(deptno);
+		System.out.println(">> delete result >>" + result);
+		
+		return "";
+	}
 }

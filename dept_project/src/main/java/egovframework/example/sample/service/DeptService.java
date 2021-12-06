@@ -27,4 +27,12 @@ public interface DeptService {
 	 * @throws Exception
 	 */
 	DeptVO selectDeptDetail(int deptno) throws Exception;
+
+	/**
+	 * 부서를 삭제한다.
+	 * @param deptno - 삭제할 부서번호
+	 * @return int형
+	 * @throws Exception
+	 */
+	int deleteDept(int deptno) throws Exception;
 }

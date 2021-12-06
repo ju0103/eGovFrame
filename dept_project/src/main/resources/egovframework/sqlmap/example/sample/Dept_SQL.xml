@@ -38,4 +38,13 @@
 			 ORDER BY deptno
 		]]>
 	</select>
+	
+	<!-- 부서를 삭제한다. -->
+	<delete id="deptDAO.deleteDept">
+		<![CDATA[
+			DELETE FROM DEPT
+			 WHERE deptno = #deptno# 
+		]]>
+	</delete>
+	
 </sqlMap>
