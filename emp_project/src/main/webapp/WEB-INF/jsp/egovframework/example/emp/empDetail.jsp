@@ -52,7 +52,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<button type="button">수정</button>
+				<button type="button" onclick="location='updateEmp.do?empno=${empVO.empno}'">수정</button>
 				<button type="button" onclick="location='deleteEmp.do?empno=${empVO.empno}'">삭제</button>
 			</td>
 		</tr>

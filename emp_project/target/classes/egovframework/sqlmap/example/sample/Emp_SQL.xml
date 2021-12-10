@@ -56,4 +56,13 @@
 		]]>
 	</delete>
 
+	<!-- 사원 정보 수정 -->
+	<update id="empDAO.updateEmp">
+		<![CDATA[
+			UPDATE EMP
+			   SET ENAME = #ename#
+			     , DEPTNO = #deptno#
+			 WHERE empno = #empno#
+		]]>
+	</update>
 </sqlMap>

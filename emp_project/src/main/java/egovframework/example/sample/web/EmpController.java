@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -85,5 +86,36 @@ public class EmpController {
 		System.out.println(">> delete result >> " + result);
 		
 		return "";
+	}
+	
+	/**
+	 * 사원 수정 화면을 조회한다.
+	 * @param empno - 수정할 사원의 사원번호
+	 * @param model
+	 * @return "updateEmp"
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/updateEmp.do")
+	public String updateEmp(int empno, Model model) throws Exception {
+
+		EmpVO vo = empService.selectEmpDetail(empno);
+		model.addAttribute("empVO", vo);
+		
+		return "emp/updateEmp";
+	}
+	
+	/**
+	 * 사원 정보를 수정한다.
+	 * @param empVO - 수정할 사원의 정보가 담긴 VO
+	 * @return "empList"
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/updateEmpSave.do")
+	public String updateEmpSave(EmpVO empVO) throws Exception {
+		
+		int result = empService.updateEmp(empVO);
+		System.out.println(">> update result >> " + result);
+		
+		return "redirect:empList.do";
 	}
 }

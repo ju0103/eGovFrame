@@ -35,4 +35,12 @@ public interface EmpService {
 	 * @throws Exception
 	 */
 	int deleteEmp(int empno) throws Exception;
+	
+	/**
+	 * 사원 정보를 수정한다.
+	 * @param empVO - 수정할 사원 정보가 담긴 VO
+	 * @return int형
+	 * @throws Exception
+	 */
+	int updateEmp(EmpVO empVO) throws Exception;
 }
