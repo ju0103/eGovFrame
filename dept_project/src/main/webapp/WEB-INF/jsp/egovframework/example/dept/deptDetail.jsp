@@ -32,7 +32,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<button type="button">수정</button>
+				<button type="button" onclick="location='updateDept.do?deptno=${deptDetail.deptno}'">수정</button>
 				<button type="button" onclick="location='deleteDept.do?deptno=${deptDetail.deptno}'">삭제</button>
 			</td>
 		</tr>

@@ -35,4 +35,12 @@ public interface DeptService {
 	 * @throws Exception
 	 */
 	int deleteDept(int deptno) throws Exception;
+	
+	/**
+	 * 부서 정보를 수정한다.
+	 * @param deptVO - 수정할 부서 정보가 담긴 VO
+	 * @return int형
+	 * @throws Exception
+	 */
+	int updateDept(DeptVO deptVO) throws Exception;
 }

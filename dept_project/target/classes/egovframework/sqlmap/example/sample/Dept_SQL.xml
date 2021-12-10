@@ -47,4 +47,14 @@
 		]]>
 	</delete>
 	
+	<!-- 부서 정보를 수정한다. -->
+	<update id="deptDAO.updateDept">
+		<![CDATA[
+			UPDATE DEPT
+			   SET dname = #dname#
+				  , loc = #loc#
+			 WHERE deptno = #deptno#
+		]]>
+	</update>
+	
 </sqlMap>

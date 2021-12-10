@@ -48,5 +48,15 @@ public class DeptDAO extends EgovAbstractDAO {
 	public int deleteDept(int deptno) throws Exception {
 		return delete("deptDAO.deleteDept", deptno);
 	}
+	
+	/**
+	 * 부서 정보를 수정한다.
+	 * @param deptVO - 수정할 부서 정보가 담긴 VO
+	 * @return int형
+	 * @throws Exception
+	 */
+	public int updateDept(DeptVO deptVO) throws Exception {
+		return update("deptDAO.updateDept", deptVO);
+	}
 
 }

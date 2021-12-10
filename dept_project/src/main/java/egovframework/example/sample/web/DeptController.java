@@ -87,4 +87,35 @@ public class DeptController {
 		
 		return "";
 	}
+	
+	/**
+	 * 부서 수정 화면을 조회한다.
+	 * @param deptno - 수정할 부서번호
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/updateDept.do")
+	public String updateDept(int deptno, Model model) throws Exception {
+
+		DeptVO deptVO = deptService.selectDeptDetail(deptno);
+		model.addAttribute("deptVO", deptVO);
+		
+		return "dept/updateDept";
+	}
+	
+	/**
+	 * 부서 정보를 수정한다.
+	 * @param deptVO - 수정할 부서 정보
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/updateDeptSave.do")
+	public String updateDeptSave(DeptVO deptVO) throws Exception {
+		
+		int result = deptService.updateDept(deptVO);
+		System.out.println(">> update result >> " + result);
+		
+		return "";
+	}
 }
