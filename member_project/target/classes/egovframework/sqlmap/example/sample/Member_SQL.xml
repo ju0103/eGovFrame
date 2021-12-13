@@ -18,7 +18,7 @@
 		]]>
 	</insert>
 	
-    <select id="memberDAO.login" resultClass="memberVO">
+    <select id="memberDAO.login" parameterClass="memberVO" resultClass="memberVO">
         <![CDATA[
             SELECT
                 MEM_PWD

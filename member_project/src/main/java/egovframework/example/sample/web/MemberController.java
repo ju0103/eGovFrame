@@ -35,11 +35,9 @@ public class MemberController {
 	@RequestMapping(value = "/login_ok.do")
 	public String login_ok(MemberVO member) throws Exception {
 		
-		MemberVO dbMember = memberService.login(member);
-		String dbPwd = dbMember.getMem_pwd();
-		String inputPwd = member.getMem_pwd();
+		int result = memberService.login(member);
 		
-		if (dbPwd.equals(inputPwd)) {
+		if (result == 1) {
 			return "member/login_ok";
 		}
 		

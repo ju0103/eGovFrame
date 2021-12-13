@@ -19,8 +19,19 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberVO login(MemberVO member) throws Exception {
-		return memberDAO.login(member);
+	public int login(MemberVO member) throws Exception {
+		MemberVO dbMember = memberDAO.login(member);
+		
+		if (dbMember != null) {
+			String dbPwd = dbMember.getMem_pwd();
+			String inputPwd = member.getMem_pwd();
+			if (dbPwd.equals(inputPwd)) {
+				return 1;
+			} else {
+				return 0;
+			}
+		}
+		return -1;
 	}
 
 }
