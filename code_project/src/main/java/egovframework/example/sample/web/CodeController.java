@@ -33,8 +33,15 @@ public class CodeController {
 	// 코드 목록 조회
 	@RequestMapping(value = "/codeList.do")
 	public String selectCodeList(CodeVO codeVO, ModelMap model) throws Exception {
+		
 		List<?> codeList = codeService.selectCodeList(codeVO);
 		model.addAttribute("codeList", codeList);
+		
+		// 코드 총 갯수
+		int total = codeService.selectCodeCount(codeVO);
+		model.addAttribute("total", total);
+		
 		return "code/codeList";
 	}
+	
 }

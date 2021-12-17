@@ -35,5 +35,15 @@ public class CodeServiceImpl implements CodeService {
 	public List<?> selectCodeList(CodeVO codeVO) throws Exception {
 		return codeDAO.selectCodeList(codeVO);
 	}
-	
+
+	/**
+	 * 코드 총 갯수를 조회한다.
+	 * @param codeVO
+	 * @return 코드 총 갯수
+	 * @throws Exception
+	 */
+	@Override
+	public int selectCodeCount(CodeVO codeVO) throws Exception {
+		return codeDAO.selectCodeCount(codeVO);
+	}
 }

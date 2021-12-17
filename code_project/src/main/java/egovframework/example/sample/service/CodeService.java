@@ -19,4 +19,11 @@ public interface CodeService {
 	 */
 	List<?> selectCodeList(CodeVO codeVO) throws Exception;
 	
+	/**
+	 * 코드 총 갯수를 조회한다.
+	 * @param codeVO
+	 * @return 코드 총 갯수
+	 * @throws Exception
+	 */
+	public int selectCodeCount(CodeVO codeVO) throws Exception;
 }

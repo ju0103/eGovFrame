@@ -18,6 +18,7 @@
 	</style>
 </head>
 <body>
+	<p>Total: ${total}개</p>
 	<table>
 		<caption>코드 목록</caption>
 		<colgroup>

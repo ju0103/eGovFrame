@@ -30,4 +30,12 @@
 		]]>
 	</select>
 	
+	<!-- 코드 갯수 -->
+	<select id="codeDAO.selectCodeCount" resultClass="int">
+		<![CDATA[
+			SELECT COUNT(CODE)
+			  FROM CODES
+		]]>
+	</select>
+	
 </sqlMap>

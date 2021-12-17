@@ -28,4 +28,14 @@ public class CodeDAO extends EgovAbstractDAO {
 	public List<?> selectCodeList(CodeVO codeVO) throws Exception {
 		return list("codeDAO.selectCodeList", codeVO);
 	}
+	
+	/**
+	 * 코드 총 갯수를 조회한다.
+	 * @param codeVO
+	 * @return 코드 총 갯수
+	 * @throws Exception
+	 */
+	public int selectCodeCount(CodeVO codeVO) throws Exception {
+		return (int) select("codeDAO.selectCodeCount", codeVO);
+	}
 }
