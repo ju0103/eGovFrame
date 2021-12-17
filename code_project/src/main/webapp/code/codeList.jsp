@@ -16,6 +16,15 @@
 			padding: 5px;
 		}
 	</style>
+	<script type="text/javascript">
+		function confirmDelete(code) {
+			var result = confirm("정말로 삭제하시겠습니까?");
+			
+			if (result == true) {
+				location.href = "deleteCode.do?code=" + code;
+			}
+		}
+	</script>
 </head>
 <body>
 	<p>Total: ${total}개</p>
@@ -23,13 +32,15 @@
 		<caption>코드 목록</caption>
 		<colgroup>
 			<col width="10%">
-			<col width="40%">
-			<col width="50%">
+			<col width="30%">
+			<col width="30%">
+			<col width="20%">
 		</colgroup>
 		<tr>
 			<th>번호</th>
 			<th>그룹명</th>
 			<th>코드명</th>
+			<th>구분</th>
 		</tr>
 		<c:set var="count" value="1" />
 		<c:forEach var="list" items="${codeList}">
@@ -37,6 +48,7 @@
 				<td><c:out value="${count}"></c:out></td>
 				<td>${list.gid}</td>
 				<td>${list.name}</td>
+				<td><button type="button" onclick="confirmDelete(${list.code}); false;">삭제</button></td>
 			</tr>
 			<c:set var="count" value="${count+1}" />
 		</c:forEach>

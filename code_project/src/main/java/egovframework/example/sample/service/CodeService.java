@@ -26,4 +26,11 @@ public interface CodeService {
 	 * @throws Exception
 	 */
 	public int selectCodeCount(CodeVO codeVO) throws Exception;
+	
+	/**
+	 * 코드를 삭제한다.
+	 * @param codeVO - 삭제할 코드 정보가 담긴 VO
+	 * @throws Exception
+	 */
+	public void deleteCode(CodeVO codeVO) throws Exception;
 }

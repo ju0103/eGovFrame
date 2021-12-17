@@ -38,4 +38,12 @@
 		]]>
 	</select>
 	
+	<!-- 코드 삭제 -->
+	<delete id="codeDAO.deleteCode" parameterClass="codeVO">
+		<![CDATA[
+			DELETE CODES
+			 WHERE CODE = #code#
+		]]>
+	</delete>
+	
 </sqlMap>

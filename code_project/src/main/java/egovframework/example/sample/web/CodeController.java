@@ -44,4 +44,10 @@ public class CodeController {
 		return "code/codeList";
 	}
 	
+	// 코드 삭제
+	@RequestMapping(value = "/deleteCode.do")
+	public String deleteCode(CodeVO codeVO) throws Exception {
+		codeService.deleteCode(codeVO);
+		return "redirect:codeList.do";
+	}
 }
