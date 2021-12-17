@@ -19,4 +19,15 @@
 		]]>
 	</insert>
 	
+	<!-- 코드 목록 -->
+	<select id="codeDAO.selectCodeList" parameterClass="codeVO" resultClass="egovMap">
+		<![CDATA[
+			SELECT CODE
+			  	 , DECODE(GID, 1, 'Job', 2, 'Hobby') AS GID
+			  	 , NAME
+			  FROM CODES
+			 ORDER BY CODE
+		]]>
+	</select>
+	
 </sqlMap>
