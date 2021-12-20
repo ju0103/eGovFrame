@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -48,6 +49,21 @@ public class CodeController {
 	@RequestMapping(value = "/deleteCode.do")
 	public String deleteCode(CodeVO codeVO) throws Exception {
 		codeService.deleteCode(codeVO);
+		return "redirect:codeList.do";
+	}
+	
+	// 코드 수정 화면
+	@RequestMapping(value = "/modifyCode.do")
+	public String modifyCode(CodeVO codeVO, Model model) throws Exception {
+		CodeVO code = codeService.selectCodeDetail(codeVO);
+		model.addAttribute("codeVo", code);
+		return "code/codeModifyWrite";
+	}
+	
+	// 코드 수정
+	@RequestMapping(value = "/modifyCodeSave.do")
+	public String modeifyCodeSave(CodeVO codeVO) throws Exception {
+		codeService.updateCode(codeVO);
 		return "redirect:codeList.do";
 	}
 }

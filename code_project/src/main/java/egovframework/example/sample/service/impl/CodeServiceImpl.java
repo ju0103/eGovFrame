@@ -56,4 +56,25 @@ public class CodeServiceImpl implements CodeService {
 	public void deleteCode(CodeVO codeVO) throws Exception {
 		codeDAO.deleteCode(codeVO);
 	}
+
+	/**
+	 * 코드 정보를 조회한다.
+	 * @param codeVO - 조회할 코드 정보가 담긴 VO
+	 * @return codeVO
+	 * @throws Exception
+	 */
+	@Override
+	public CodeVO selectCodeDetail(CodeVO codeVO) throws Exception {
+		return codeDAO.selectCodeDetail(codeVO);
+	}
+
+	/**
+	 * 코드 정보를 수정한다.
+	 * @param codeVO - 수정할 코드 정보가 담긴 VO
+	 * @throws Exception
+	 */
+	@Override
+	public void updateCode(CodeVO codeVO) throws Exception {
+		codeDAO.updateCode(codeVO);
+	}
 }

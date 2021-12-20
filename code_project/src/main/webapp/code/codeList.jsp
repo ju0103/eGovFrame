@@ -24,6 +24,10 @@
 				location.href = "deleteCode.do?code=" + code;
 			}
 		}
+		
+		function confirmModify(code) {
+			location.href = "modifyCode.do?code=" + code;
+		}
 	</script>
 </head>
 <body>
@@ -48,7 +52,10 @@
 				<td><c:out value="${count}"></c:out></td>
 				<td>${list.gid}</td>
 				<td>${list.name}</td>
-				<td><button type="button" onclick="confirmDelete(${list.code}); false;">삭제</button></td>
+				<td>
+					<button type="button" onclick="confirmModify('${list.code}');">수정</button>
+					<button type="button" onclick="confirmDelete(${list.code}); false;">삭제</button>
+				</td>
 			</tr>
 			<c:set var="count" value="${count+1}" />
 		</c:forEach>

@@ -46,4 +46,25 @@
 		]]>
 	</delete>
 	
+	<!-- 코드 정보 조회 -->
+	<select id="codeDAO.selectCodeDetail" resultClass="codeVO">
+		<![CDATA[
+			SELECT CODE
+			  	 , GID
+			  	 , NAME
+			  FROM CODES
+			 WHERE CODE = #code#
+		]]>
+	</select>
+	
+	<!-- 코드 수정 -->
+	<update id="codeDAO.updateCode" parameterClass="codeVO">
+		<![CDATA[
+			UPDATE CODES
+			   SET GID = #gid#
+			  	 , NAME = #name#
+			 WHERE CODE = #code#
+		]]>
+	</update>
+	
 </sqlMap>
