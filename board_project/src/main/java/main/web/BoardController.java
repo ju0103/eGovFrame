@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import main.service.BoardService;
 import main.service.BoardVO;
@@ -22,15 +23,18 @@ public class BoardController {
 	
 	// 게시물 등록
 	@RequestMapping(value = "/boardWriteSave.do")
+	@ResponseBody
 	public String boardWriteSave(BoardVO boardVO) throws Exception {
 		String result = boardService.insertBoard(boardVO);
+		String msg = "";
 		
 		if (result == null) {
-			System.out.println("저장 완료");
+			msg = "ok";
 		} else {
-			System.out.println("저장 실패");
+			msg = "fail";
 		}
 		
-		return "";
+		System.out.println("board write msg >> " + msg);
+		return msg;
 	}
 }
