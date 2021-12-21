@@ -26,4 +26,17 @@
 		]]>
 	</insert>
 
+	<select id="boardDAO.selectBoardList" parameterClass="boardVO" resultClass="egovMap">
+		<![CDATA[
+			SELECT bno
+				 , title
+				 , pwd
+				 , name
+				 , content
+				 , hits
+				 , TO_CHAR(regdate, 'YYYY-MM-DD') AS REGDATE
+			  FROM BOARD
+			 ORDER BY BNO DESC
+		]]>
+	</select>
 </sqlMap>

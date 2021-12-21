@@ -1,5 +1,7 @@
 package main.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
@@ -16,5 +18,15 @@ public class BoardDAO extends EgovAbstractDAO {
 	 */
 	public String insertBoard(BoardVO boardVO) throws Exception {
 		return (String) insert("boardDAO.insertBoard", boardVO);
+	}
+	
+	/**
+	 * 게시물 목록
+	 * @param boardVO
+	 * @return 게시물 목록
+	 * @throws Exception
+	 */
+	public List<?> selectBoardList(BoardVO boardVO) throws Exception {
+		return list("boardDAO.selectBoardList", boardVO);
 	}
 }

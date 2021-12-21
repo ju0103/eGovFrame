@@ -1,8 +1,11 @@
 package main.web;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -36,5 +39,13 @@ public class BoardController {
 		
 		System.out.println("board write msg >> " + msg);
 		return msg;
+	}
+	
+	// 게시물 목록
+	@RequestMapping(value = "/boardList.do")
+	public String boardList(BoardVO boardVO, Model model) throws Exception {
+		List<?> boardList = boardService.selectBoardList(boardVO);
+		model.addAttribute("boardList", boardList);
+		return "board/boardList";
 	}
 }

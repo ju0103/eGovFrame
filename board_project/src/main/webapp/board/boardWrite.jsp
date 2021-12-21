@@ -51,7 +51,8 @@
 				dataType: "text",
 				success: function(data) {
 					if (data == "ok") {
-						alert("저장 완료");
+						// alert("저장 완료");
+						location.href = "boardList.do";
 					} else {
 						alert("저장 실패");
 					}
