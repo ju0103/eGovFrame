@@ -29,4 +29,23 @@ public class BoardDAO extends EgovAbstractDAO {
 	public List<?> selectBoardList(BoardVO boardVO) throws Exception {
 		return list("boardDAO.selectBoardList", boardVO);
 	}
+	
+	/**
+	 * 게시물 상세 내용 조회
+	 * @param boardVO
+	 * @return 게시물 상세 내용
+	 * @throws Exception
+	 */
+	public BoardVO selectBoardDetail(int bno) throws Exception {
+		return (BoardVO) select("boardDAO.selectBoardDetail", bno);
+	}
+	
+	/**
+	 * 게시물 조회수 증가
+	 * @param bno
+	 * @throws Exception
+	 */
+	public void updateHits(int bno) throws Exception {
+		update("boardDAO.updateHits", bno);
+	}
 }

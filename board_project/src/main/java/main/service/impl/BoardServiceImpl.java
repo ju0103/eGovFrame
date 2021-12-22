@@ -37,4 +37,25 @@ public class BoardServiceImpl implements BoardService {
 		return boardDAO.selectBoardList(boardVO);
 	}
 
+	/**
+	 * 게시물 상세 내용 조회
+	 * @param boardVO
+	 * @return 게시물 상세 내용
+	 * @throws Exception
+	 */
+	@Override
+	public BoardVO selectBoardDetail(int bno) throws Exception {
+		return boardDAO.selectBoardDetail(bno);
+	}
+
+	/**
+	 * 게시물 조회수 증가
+	 * @param bno
+	 * @throws Exception
+	 */
+	@Override
+	public void updateHits(int bno) throws Exception {
+		boardDAO.updateHits(bno);
+	}
+
 }

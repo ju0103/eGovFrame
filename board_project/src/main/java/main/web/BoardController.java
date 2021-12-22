@@ -48,4 +48,17 @@ public class BoardController {
 		model.addAttribute("boardList", boardList);
 		return "board/boardList";
 	}
+	
+	// 게시물 상세 내용 조회
+	@RequestMapping(value = "/boardDetail.do")
+	public String boardDetail(int bno, Model model) throws Exception {
+		// 조회수 증가
+		boardService.updateHits(bno);
+		
+		// 게시물 상세 내용 조회
+		BoardVO boardDetail = boardService.selectBoardDetail(bno);
+		model.addAttribute("boardDetail", boardDetail);
+		return "board/boardDetail";
+	}
+	
 }

@@ -19,4 +19,19 @@ public interface BoardService {
 	 * @throws Exception
 	 */
 	public List<?> selectBoardList(BoardVO boardVO) throws Exception;
+	
+	/**
+	 * 게시물 상세 내용 조회
+	 * @param boardVO
+	 * @return 게시물 상세 내용
+	 * @throws Exception
+	 */
+	public BoardVO selectBoardDetail(int bno) throws Exception;
+	
+	/**
+	 * 게시물 조회수 증가
+	 * @param bno
+	 * @throws Exception
+	 */
+	public void updateHits(int bno) throws Exception;
 }

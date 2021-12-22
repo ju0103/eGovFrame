@@ -39,4 +39,27 @@
 			 ORDER BY BNO DESC
 		]]>
 	</select>
+	
+	<select id="boardDAO.selectBoardDetail" resultClass="boardVO">
+		<![CDATA[
+			SELECT bno
+				 , title
+				 , pwd
+				 , name
+				 , content
+				 , hits
+				 , regdate
+			  FROM BOARD
+			 WHERE BNO = #bno#
+		]]>
+	</select>
+	
+	<update id="boardDAO.updateHits">
+		<![CDATA[
+			UPDATE BOARD
+			   SET HITS = HITS + 1
+			 WHERE BNO = #bno#
+		]]>
+	</update>
+	
 </sqlMap>
