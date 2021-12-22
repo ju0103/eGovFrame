@@ -84,4 +84,21 @@ public class BoardController {
 		
 		return msg;
 	}
+	
+	// 게시물 삭제
+	@RequestMapping(value = "/deleteBoard.do")
+	@ResponseBody
+	public String deleteBoard(int bno) throws Exception {
+		int result = boardService.deleteBoard(bno);
+		
+		String msg = "";
+		if (result == 1) {
+			msg = "ok";
+		} else {
+			msg = "fail";
+		}
+		
+		return msg;
+	}
+	
 }

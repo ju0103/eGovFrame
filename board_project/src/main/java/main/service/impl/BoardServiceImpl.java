@@ -69,4 +69,9 @@ public class BoardServiceImpl implements BoardService {
 		return boardDAO.updateBoard(boardVO);
 	}
 
+	@Override
+	public int deleteBoard(int bno) throws Exception {
+		return boardDAO.deleteBoard(bno);
+	}
+
 }

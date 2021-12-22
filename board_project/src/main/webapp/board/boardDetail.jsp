@@ -17,6 +17,35 @@
 			padding: 5px;
 		}
 	</style>
+	<script src="/board_project/script/jquery.js"></script>
+	<script type="text/javascript">
+		function func_delete(bno) {
+			var pwd = prompt("비밀번호를 입력하세요.", "");
+			
+			if (pwd == '${boardDetail.pwd}') {
+				console.log(pwd);
+				$.ajax({
+					type: "post",
+					data: bno,
+					url: "deleteBoard.do?bno=" + bno,
+					dataType: "text",
+					success: function(data) {
+						if (data == "ok") {
+							alert("삭제 성공");
+							location.href = "boardList.do";
+						} else {
+							alert("삭제 실패");
+						}
+					},
+					error: function() {
+						alert("오류 발생");
+					}
+				});
+			} else {
+				alert("비밀번호 오류");
+			}
+		}
+	</script>
 </head>
 <body>
 	<div>
@@ -38,7 +67,7 @@
 	</table>
 	<div style="margin-top: 10px; text-align: right; width: 600px;">
 		<button type="button" onclick="location='modifyBoard.do?bno=${boardDetail.bno}'">수정</button>
-		<button type="button">삭제</button>
+		<button type="button" onclick="func_delete(${boardDetail.bno}); return false;">삭제</button>
 	</div>
 </body>
 </html>

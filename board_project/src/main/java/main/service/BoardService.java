@@ -42,4 +42,6 @@ public interface BoardService {
 	 * @throws Exception
 	 */
 	public int updateBoard(BoardVO boardVO) throws Exception;
+	
+	public int deleteBoard(int bno) throws Exception;
 }

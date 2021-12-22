@@ -58,4 +58,8 @@ public class BoardDAO extends EgovAbstractDAO {
 	public int updateBoard(BoardVO boardVO) throws Exception {
 		return update("boardDAO.updateBoard", boardVO);
 	}
+	
+	public int deleteBoard(int bno) throws Exception {
+		return delete("boardDAO.deleteBoard", bno);
+	}
 }

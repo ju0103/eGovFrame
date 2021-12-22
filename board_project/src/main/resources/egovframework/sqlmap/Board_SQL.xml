@@ -71,4 +71,11 @@
 		]]>
 	</update>
 	
+	<delete id="boardDAO.deleteBoard">
+		<![CDATA[
+			DELETE BOARD
+			 WHERE BNO = #bno#
+		]]>
+	</delete>
+	
 </sqlMap>
