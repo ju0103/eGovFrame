@@ -69,6 +69,12 @@ public class BoardServiceImpl implements BoardService {
 		return boardDAO.updateBoard(boardVO);
 	}
 
+	/**
+	 * 게시물 삭제
+	 * @param bno
+	 * @return 삭제 결과(int형)
+	 * @throws Exception
+	 */
 	@Override
 	public int deleteBoard(int bno) throws Exception {
 		return boardDAO.deleteBoard(bno);

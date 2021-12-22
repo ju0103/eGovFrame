@@ -43,5 +43,11 @@ public interface BoardService {
 	 */
 	public int updateBoard(BoardVO boardVO) throws Exception;
 	
+	/**
+	 * 게시물 삭제
+	 * @param bno
+	 * @return 삭제 결과(int형)
+	 * @throws Exception
+	 */
 	public int deleteBoard(int bno) throws Exception;
 }

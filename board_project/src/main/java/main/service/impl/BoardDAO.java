@@ -59,6 +59,12 @@ public class BoardDAO extends EgovAbstractDAO {
 		return update("boardDAO.updateBoard", boardVO);
 	}
 	
+	/**
+	 * 게시물 삭제
+	 * @param bno
+	 * @return 삭제 결과(int형)
+	 * @throws Exception
+	 */
 	public int deleteBoard(int bno) throws Exception {
 		return delete("boardDAO.deleteBoard", bno);
 	}
