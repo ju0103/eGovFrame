@@ -170,3 +170,53 @@
 - 최종 화면
   
     ![code_project](https://user-images.githubusercontent.com/53552121/146723432-f2e96fc9-e5b8-40b4-9ff5-68c15eae5b70.gif)
+
+
+### [board_project]
+
+- 파일 위치 설정
+  - dispatcher-servlet.xml: 패키지 및 jsp 파일 위치 설정
+    ```xml
+      <?xml version="1.0" encoding="UTF-8"?>
+      <beans>
+          <context:component-scan base-package="egovframework, main">
+            <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+          </context:component-scan>
+          <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="1"
+          p:viewClass="org.springframework.web.servlet.view.JstlView"
+          p:prefix="/" p:suffix=".jsp"/>
+      </beans>
+    ```
+    - <context> 태그의 base-package 속성에 main을 추가하여 패키지 파일의 위치 설정
+    - <bean> 태그의 p:prefix를 수정하여 jsp 파일의 위치 설정
+  
+  - context-common.xml: 패키지 파일 위치 설정
+    ```xml
+      <?xml version="1.0" encoding="UTF-8"?>
+      <beans>
+          <context:component-scan base-package="egovframework, main">
+            <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+          </context:component-scan>
+      </beans>
+    ```
+    - dispacher-servlet.xml과 마찬가지로 <context> 태그의 base-package 속성에 main을 추가하여 패키지 파일의 위치 설정
+
+  - sql-map-config.xml: 쿼리 파일 위치 설정
+
+    ```xml
+      <?xml version="1.0" encoding="UTF-8"?>
+      <sqlMapConfig>
+        <sqlMap resource="egovframework/sqlmap/Board_SQL.xml"/>
+      </sqlMapConfig>
+
+    ```
+    - <sqlMap> 태그의 resource 속성에서 연결할 쿼리 경로 설정
+
+- board 테이블
+  
+    <img width="250" alt="Board_project 테이블" src="https://user-images.githubusercontent.com/53552121/147109065-0d7261a6-6a09-44b2-89f8-1ddea67378b1.PNG">
+
+- 최종 화면
+  
+    ![board_project](https://user-images.githubusercontent.com/53552121/147108858-90196fdf-60e9-416e-acfc-dd1f1e4ee6c0.gif)
+
