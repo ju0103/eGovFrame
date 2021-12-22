@@ -34,4 +34,12 @@ public interface BoardService {
 	 * @throws Exception
 	 */
 	public void updateHits(int bno) throws Exception;
+	
+	/**
+	 * 게시물 수정
+	 * @param boardVO
+	 * @return 수정 결과(int형)
+	 * @throws Exception
+	 */
+	public int updateBoard(BoardVO boardVO) throws Exception;
 }

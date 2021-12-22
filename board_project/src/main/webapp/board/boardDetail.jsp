@@ -37,7 +37,7 @@
 		</tr>
 	</table>
 	<div style="margin-top: 10px; text-align: right; width: 600px;">
-		<button type="button">수정</button>
+		<button type="button" onclick="location='modifyBoard.do?bno=${boardDetail.bno}'">수정</button>
 		<button type="button">삭제</button>
 	</div>
 </body>

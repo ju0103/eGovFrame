@@ -57,5 +57,16 @@ public class BoardServiceImpl implements BoardService {
 	public void updateHits(int bno) throws Exception {
 		boardDAO.updateHits(bno);
 	}
+	
+	/**
+	 * 게시물 수정
+	 * @param boardVO
+	 * @return 수정 결과(int형)
+	 * @throws Exception
+	 */
+	@Override
+	public int updateBoard(BoardVO boardVO) throws Exception {
+		return boardDAO.updateBoard(boardVO);
+	}
 
 }

@@ -61,4 +61,27 @@ public class BoardController {
 		return "board/boardDetail";
 	}
 	
+	// 게시물 수정 화면
+	@RequestMapping(value = "/modifyBoard.do")
+	public String modifyBoard(int bno, Model model) throws Exception {
+		BoardVO boardDetail = boardService.selectBoardDetail(bno);
+		model.addAttribute("boardDetail", boardDetail);
+		return "board/modifyBoard";
+	}
+	
+	// 게시물 수정
+	@RequestMapping(value = "/modifyBoardSave.do")
+	@ResponseBody
+	public String modifyBoardSave(BoardVO boardVO) throws Exception {
+		int result = boardService.updateBoard(boardVO);
+		
+		String msg = "";
+		if (result == 1) {
+			msg = "ok";
+		} else {
+			msg = "fail";
+		}
+		
+		return msg;
+	}
 }

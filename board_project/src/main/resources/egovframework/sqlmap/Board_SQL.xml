@@ -62,4 +62,13 @@
 		]]>
 	</update>
 	
+	<update id="boardDAO.updateBoard">
+		<![CDATA[
+			UPDATE BOARD
+			   SET title = #title#
+			     , content = #content#
+			 WHERE BNO = #bno#
+		]]>
+	</update>
+	
 </sqlMap>
