@@ -143,16 +143,19 @@
 ### [code_project]
 
 - 파일 위치 설정
-  - jsp 파일들이 위치할 경로 지정(dispatcher-servlet.xml)
+  - dispatcher-servlet.xml: jsp 파일 위치 설정
 
     ```xml
-      <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="1"
+      <?xml version="1.0" encoding="UTF-8"?>
+      <beans>
+      	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="1"
 	    p:viewClass="org.springframework.web.servlet.view.JstlView"
 	    p:prefix="/" p:suffix=".jsp"/>
+      </beans>
     ```
-    - p:prefix의 경로를 수정하여 jsp 파일들이 위치할 경로 설정
+    - `<bean>` 태그의 p:prefix를 수정하여 jsp 파일의 위치 설정
   
-  - 쿼리 파일이 위치할 경로 지정(sql-map-config.xml)
+  - sql-map-config.xml: 쿼리 파일 위치 설정
 
     ```xml
       <?xml version="1.0" encoding="UTF-8"?>
@@ -161,7 +164,7 @@
       </sqlMapConfig>
 
     ```
-    - sqlMap 태그의 resource 속성에서 연결할 쿼리 경로 설정
+    - `<sqlMap>` 태그의 resource 속성에서 연결할 쿼리 경로 설정
 
 - codes 테이블
   
@@ -187,8 +190,8 @@
           p:prefix="/" p:suffix=".jsp"/>
       </beans>
     ```
-    - <context> 태그의 base-package 속성에 main을 추가하여 패키지 파일의 위치 설정
-    - <bean> 태그의 p:prefix를 수정하여 jsp 파일의 위치 설정
+    - `<context>` 태그의 base-package 속성에 main을 추가하여 패키지 파일의 위치 설정
+    - `<bean>` 태그의 p:prefix를 수정하여 jsp 파일의 위치 설정
   
   - context-common.xml: 패키지 파일 위치 설정
     ```xml
@@ -199,7 +202,7 @@
           </context:component-scan>
       </beans>
     ```
-    - dispacher-servlet.xml과 마찬가지로 <context> 태그의 base-package 속성에 main을 추가하여 패키지 파일의 위치 설정
+    - dispacher-servlet.xml과 마찬가지로 `<context>` 태그의 base-package 속성에 main을 추가하여 패키지 파일의 위치 설정
 
   - sql-map-config.xml: 쿼리 파일 위치 설정
 
@@ -210,7 +213,7 @@
       </sqlMapConfig>
 
     ```
-    - <sqlMap> 태그의 resource 속성에서 연결할 쿼리 경로 설정
+    - `<sqlMap>` 태그의 resource 속성에서 연결할 쿼리 경로 설정
 
 - board 테이블
   
