@@ -28,26 +28,35 @@
 				$("#content").focus();
 				return false;
 			}
+			if ($("#pwd").val() == "") {
+				alert("비밀번호를 입력해 주세요.");
+				$("#pwd").focus();
+				return false;
+			}
 			
-			var formData = $("#modifyForm").serialize();
-			
-			$.ajax({
-				type: "post",
-				data: formData,
-				url: "modifyBoardSave.do",
-				dataType: "text",
-				success: function(data) {
-					if (data == "ok") {
-						alert("수정 완료");
-						location = "boardList.do";
-					} else {
-						alert("수정 실패");
+			if ($("#pwd").val() == '${boardDetail.pwd}') {
+				var formData = $("#modifyForm").serialize();
+				
+				$.ajax({
+					type: "post",
+					data: formData,
+					url: "modifyBoardSave.do",
+					dataType: "text",
+					success: function(data) {
+						if (data == "ok") {
+							alert("수정 완료");
+							location = "boardList.do";
+						} else {
+							alert("수정 실패");
+						}
+					},
+					error: function() {
+						alert("오류 발생");
 					}
-				},
-				error: function() {
-					alert("오류 발생");
-				}
-			});
+				});
+			} else {
+				alert("비밀번호 오류");
+			}
 		}
 	</script>
 </head>
@@ -68,6 +77,10 @@
 			<tr>
 				<th><label for="content">내용</label></th>
 				<td colspan="3"><textarea cols="100" rows="10" name="content" id="content" value="${boardDetail.content}">${boardDetail.content}</textarea></td>
+			</tr>
+			<tr>
+				<th><label for="pwd">비밀번호</label></th>
+				<td><input type="password" name="pwd" id="pwd"></td>
 			</tr>
 		</table>
 	</form>
